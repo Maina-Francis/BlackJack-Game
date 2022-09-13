@@ -37,3 +37,8 @@ function startGame() {
   //render the cards value on the page
   cardsEl.textContent = `Cards: ${firstCard}, ${secondCard}`;
 }
+
+//New Card Function
+function newCard() {
+  console.log("Logging a new card from the deck");
+}
