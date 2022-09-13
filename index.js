@@ -1,16 +1,25 @@
 // Create two variables, firstCard and secondCard and set their values to a random number between 2-11
 
-let firstCard = 4;
-let secondCard = 6;
+let firstCard = 11;
+let secondCard = 1;
 
 let sum = firstCard + secondCard;
 
-if (sum < 21) {
-  console.log("Do you want to draw a new card?");
+let hasBlackJack = false;
+let isAlive = true;
+
+let message = "";
+
+//BlackJack logic
+if (sum <= 20) {
+  message = "Do you want to draw a new card?";
 } else if (sum === 21) {
-  console.log("Congratulations! You've got BlackJack");
+  message = "Congratulations! You've got BlackJack";
+  hasBlackJack = true;
 } else {
-  console.log("You're out of the game!");
+  message = "You're out of the game!";
+  isAlive = false;
 }
 
 console.log(sum);
+console.log(message);
