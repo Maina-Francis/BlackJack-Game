@@ -16,6 +16,8 @@ let messageEl = document.getElementById("message");
 //store the sum paragraph in a variable called sumEl
 let sumEl = document.getElementById("sum-el");
 
+//store the cards paragraph in a variable called cardsEl
+let cardsEl = document.getElementById("cards");
 //BlackJack logic
 function startGame() {
   if (sum <= 20) {
@@ -31,4 +33,7 @@ function startGame() {
 
   //   render the sum on the page
   sumEl.textContent = `Sum: ${sum}`;
+
+  //render the cards value on the page
+  cardsEl.textContent = `Cards: ${firstCard}, ${secondCard}`;
 }
