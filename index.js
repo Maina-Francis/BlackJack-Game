@@ -1,7 +1,8 @@
 // Create two variables, firstCard and secondCard and set their values to a random number between 2-11
 
-let firstCard = 20;
+let firstCard = 10;
 let secondCard = 1;
+let cards = [firstCard, secondCard];
 
 let sum = firstCard + secondCard;
 
@@ -18,8 +19,13 @@ let sumEl = document.getElementById("sum-el");
 
 //store the cards paragraph in a variable called cardsEl
 let cardsEl = document.getElementById("cards");
-//BlackJack logic
+
+//startGame function
 function startGame() {
+  renderGame();
+}
+//BlackJack logic
+function renderGame() {
   if (sum <= 20) {
     message = "Do you want to draw a new card?";
   } else if (sum === 21) {
@@ -35,10 +41,17 @@ function startGame() {
   sumEl.textContent = `Sum: ${sum}`;
 
   //render the cards value on the page
-  cardsEl.textContent = `Cards: ${firstCard}, ${secondCard}`;
+  cardsEl.textContent = "Cards: ";
+  cardsEl.textContent = "Cards: ";
+  for (let i = 0; i < cards.length; i++) {
+    cardsEl.textContent += cards[i] + " ";
+  }
 }
 
 //New Card Function
 function newCard() {
-  console.log("Logging a new card from the deck");
+  let card = 5;
+  sum += card;
+  cards.push(card);
+  renderGame();
 }
