@@ -1,13 +1,9 @@
 // Create two variables, firstCard and secondCard and set their values to a random number between 2-11
 
-let firstCard = getRandomCard();
-let secondCard = getRandomCard();
-let cards = [firstCard, secondCard];
-
-let sum = firstCard + secondCard;
-
+let cards = [];
+let sum = 0;
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 
 let message = "";
 
@@ -22,6 +18,11 @@ let cardsEl = document.getElementById("cards");
 
 //startGame function
 function startGame() {
+  isAlive = true;
+  let firstCard = getRandomCard();
+  let secondCard = getRandomCard();
+  cards = [firstCard, secondCard];
+  sum = firstCard + secondCard;
   renderGame();
 }
 //BlackJack logic
@@ -50,10 +51,12 @@ function renderGame() {
 
 //New Card Function
 function newCard() {
-  let card = getRandomCard();
-  sum += card;
-  cards.push(card);
-  renderGame();
+  if (isAlive === true && hasBlackJack === false) {
+    let card = getRandomCard();
+    sum += card;
+    cards.push(card);
+    renderGame();
+  }
 }
 
 //random card generator
