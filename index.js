@@ -1,7 +1,7 @@
 // Create two variables, firstCard and secondCard and set their values to a random number between 2-11
 
-let firstCard = 10;
-let secondCard = 1;
+let firstCard = getRandomCard();
+let secondCard = getRandomCard();
 let cards = [firstCard, secondCard];
 
 let sum = firstCard + secondCard;
@@ -42,7 +42,7 @@ function renderGame() {
 
   //render the cards value on the page
   cardsEl.textContent = "Cards: ";
-  cardsEl.textContent = "Cards: ";
+  //   renders out all the cards
   for (let i = 0; i < cards.length; i++) {
     cardsEl.textContent += cards[i] + " ";
   }
@@ -50,8 +50,24 @@ function renderGame() {
 
 //New Card Function
 function newCard() {
-  let card = 5;
+  let card = getRandomCard();
   sum += card;
   cards.push(card);
   renderGame();
+}
+
+//random card generator
+function getRandomCard() {
+  //random number between 1-13
+  let randomNumber = Math.floor(Math.random() * 13) + 1;
+  //Assuming ACE =11
+  if (randomNumber === 1) {
+    return 11;
+  }
+  // Jack, king and queen =10
+  else if (randomNumber > 10) {
+    return 10;
+  } else {
+    return randomNumber;
+  }
 }
