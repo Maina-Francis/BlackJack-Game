@@ -7,6 +7,15 @@ let isAlive = false;
 
 let message = "";
 
+//Player information
+let player = {
+  name: "Francis",
+  chips: 500,
+};
+
+let playerEl = document.getElementById("player");
+playerEl.textContent = player.name + ": $" + player.chips;
+
 //Store the message paragraph in a variable called messageEl
 let messageEl = document.getElementById("message");
 
